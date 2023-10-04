@@ -1,10 +1,17 @@
 package com.example.generaltemplate;
 
 public class WordArraySearch {
-    /*
-    Find if a word is there
-    Find position of word
-    Find all words that match a search criteria (partial word) (find all the words with a certain combination inside of it)
 
-     */
+    public String checkIfWordIsInString(String text, String wordToFind) {
+        return "";
+    }
+
+    public String getIndexOfWordInString(String text, String wordToFind) {
+        return "";
+    }
+
+    // Ask if this method give the or he for finding the word h
+    public String getAllWordsThatContainAWordInAString(String text, String wordToFind) {
+        return "";
+    }
 }

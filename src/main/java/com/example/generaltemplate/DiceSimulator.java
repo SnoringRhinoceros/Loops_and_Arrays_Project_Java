@@ -2,6 +2,8 @@ package com.example.generaltemplate;
 
 public class DiceSimulator {
     /*
+    Ask how the input should be
+
     Dice is a comma seperated list 2,3,4,5
     Each number represents the number of that index sized faces there are
      */
