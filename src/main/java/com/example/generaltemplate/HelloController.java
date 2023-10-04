@@ -31,7 +31,6 @@ public class HelloController {
     @FXML
     public void handleTestEverythingBtnClick(ActionEvent event) {
         // Driver.run()
-        System.out.println((txtInput.getText()));
     }
 
 }
