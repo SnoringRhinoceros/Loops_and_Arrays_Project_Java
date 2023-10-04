@@ -16,7 +16,7 @@ public class HelloController {
     private Button testEverythingBtn;
     @FXML
     private TextArea resultArea;
-    private final Driver driver = new Driver();
+    private final Driver driver = new Driver(resultArea);
 
     @FXML
     public void initialize() {
@@ -30,7 +30,6 @@ public class HelloController {
     }
     @FXML
     public void handleTestEverythingBtnClick(ActionEvent event) {
-        // Driver.run()
+        driver.run("100000","000000","000000","000000","000000");
     }
-
 }
