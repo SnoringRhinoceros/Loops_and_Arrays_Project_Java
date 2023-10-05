@@ -4,6 +4,7 @@ import javafx.scene.control.TextArea;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class Driver {
@@ -25,7 +26,7 @@ public class Driver {
     public void run(String oneNumMathMethods, String twoNumMathMethods, String cypherMethods, String diceSimulatorMethods,String wordArraySearchMethods) throws IOException {
         if (String.valueOf(oneNumMathMethods.charAt(0)).equals("1")) {
             setInputs(1, 0);
-            showResult(oneNumMath.multiplesOfNum(v1));
+            showResult(oneNumMath.multiplesOfNum(v1, v2));
         }
         if (String.valueOf(oneNumMathMethods.charAt(1)).equals("1")) {
             setInputs(1, 1);
@@ -118,11 +119,11 @@ public class Driver {
     }
 
     private void setInputs(int moduleNum, int methodNum) throws IOException {
-        String correspondingLetter = String.valueOf((char)(methodNum + 1 + 64));
+        String correspondingLetter = String.valueOf((char)(methodNum + 1 + 64)).toLowerCase();
         boolean thereAreMoreInputFiles = true;
         int currentFileNum = 1;
         while (thereAreMoreInputFiles) {
-            BufferedReader bufferReader = new BufferedReader(new FileReader("./" + moduleNum + "/ " + correspondingLetter + "input" + currentFileNum + ".txt"));
+            BufferedReader bufferReader = new BufferedReader(new FileReader("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + currentFileNum + ".txt"));
             setV(currentFileNum, bufferReader.readLine());
             currentFileNum++;
             File tempFile = new File("./" + moduleNum + "/ " + correspondingLetter + "input" + currentFileNum + ".txt");
@@ -130,6 +131,12 @@ public class Driver {
                 thereAreMoreInputFiles = false;
             }
         }
+    }
+
+    private void setV(String inputs, String whatToSetTo) {
+        String[] inputArray = inputs.split(",", 4);
+        
+
     }
 
     private void setV(int num, String whatToSetTo) {
