@@ -5,12 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.generaltemplate.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.generaltemplate.HelloController">
    <children>
-      <Button fx:id="testEverythingBtn" layoutX="112.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleTestEverythingBtnClick" text="Test Everything" />
-      <TextField fx:id="v1TxtInput" layoutX="14.0" layoutY="117.0" prefHeight="26.0" prefWidth="98.0" text="Variable 1" />
+      <Button fx:id="testEverythingBtn" layoutX="106.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleTestEverythingBtnClick" text="Test Everything" />
+      <TextField fx:id="v1TxtInput" layoutX="21.0" layoutY="64.0" prefHeight="26.0" prefWidth="121.0" text="Variable 1" />
       <TextArea fx:id="resultArea" layoutX="300.0" layoutY="27.0" prefHeight="347.0" prefWidth="268.0" />
-      <TextField fx:id="v2TxtInput" layoutX="120.0" layoutY="117.0" prefHeight="26.0" prefWidth="97.0" text="Variable 2" />
-      <TextField fx:id="v3TxtInput" layoutX="222.0" layoutY="117.0" prefHeight="26.0" prefWidth="72.0" text="Variable 3" />
+      <TextField fx:id="v2TxtInput" layoutX="161.0" layoutY="64.0" prefHeight="26.0" prefWidth="121.0" text="Variable 2" />
+      <TextField fx:id="v3TxtInput" layoutX="21.0" layoutY="104.0" prefHeight="26.0" prefWidth="121.0" text="Variable 3" />
+      <TextField fx:id="v4TxtInput" layoutX="161.0" layoutY="104.0" prefHeight="26.0" prefWidth="121.0" text="Variable 4" />
    </children>
 </AnchorPane>
