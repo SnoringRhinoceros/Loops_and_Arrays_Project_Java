@@ -3,9 +3,7 @@ package com.example.generaltemplate;
 import javafx.scene.control.TextArea;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class Driver {
     private TextArea resultTextArea;
@@ -25,118 +23,125 @@ public class Driver {
 
     public void run(String oneNumMathMethods, String twoNumMathMethods, String cypherMethods, String diceSimulatorMethods,String wordArraySearchMethods) throws IOException {
         if (String.valueOf(oneNumMathMethods.charAt(0)).equals("1")) {
-            setInputs(1, 0);
-            showResult(oneNumMath.multiplesOfNum(v1, v2));
+            Supplier<String> multiplesOfNumRef = () -> oneNumMath.multiplesOfNum(v1, v2);
+            runMethod(1, 0, multiplesOfNumRef);
         }
-        if (String.valueOf(oneNumMathMethods.charAt(1)).equals("1")) {
-            setInputs(1, 1);
-            showResult(oneNumMath.numIsEvenOrOdd(v1));
-        }
-        if (String.valueOf(oneNumMathMethods.charAt(2)).equals("1")) {
-            setInputs(1, 2);
-            showResult(oneNumMath.factorialOfNum(v1));
-        }
-        if (String.valueOf(oneNumMathMethods.charAt(3)).equals("1")) {
-            setInputs(1, 3);
-            showResult(oneNumMath.primeFactorizationOfNum(v1));
-        }
-
-        if (String.valueOf(twoNumMathMethods.charAt(0)).equals("1")) {
-            setInputs(2, 0);
-            showResult(twoNumMath.getIfAIsDivisibleByB(v1, v2));
-        }
-        if (String.valueOf(twoNumMathMethods.charAt(1)).equals("1")) {
-            setInputs(2, 1);
-            showResult(twoNumMath.divideInDecimals(v1, v2));
-        }
-        if (String.valueOf(twoNumMathMethods.charAt(2)).equals("1")) {
-            setInputs(2, 2);
-            showResult(twoNumMath.divideInReducedImproperFractions(v1, v2));
-        }
-        if (String.valueOf(twoNumMathMethods.charAt(3)).equals("1")) {
-            setInputs(2, 3);
-            showResult(twoNumMath.divideInReducedProperFractions(v1, v2));
-        }
-        if (String.valueOf(twoNumMathMethods.charAt(4)).equals("1")) {
-            setInputs(2, 4);
-            showResult(twoNumMath.getGCF(v1, v2));
-        }
-
-        if (String.valueOf(cypherMethods.charAt(0)).equals("1")) {
-            setInputs(3, 0);
-            showResult(cypher.encodeCaesarCypher(v1));
-        }
-        if (String.valueOf(cypherMethods.charAt(1)).equals("1")) {
-            setInputs(3, 1);
-            showResult(cypher.decodeCaesarCypher(v1));
-        }
-        if (String.valueOf(cypherMethods.charAt(2)).equals("1")) {
-            setInputs(3, 2);
-            showResult(cypher.encodeAtBashCypher(v1));
-        }
-        if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
-            setInputs(3, 3);
-            showResult(cypher.decodeAtBashCypher(v1));
-        }
-
-        if (String.valueOf(diceSimulatorMethods.charAt(0)).equals("1")) {
-            setInputs(4, 0);
-            showResult(diceSimulator.roll(v1));
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(1)).equals("1")) {
-            setInputs(4, 1);
-            showResult(diceSimulator.roll(v1, v2));
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(2)).equals("1")) {
-            setInputs(4, 2);
-            showResult(diceSimulator.max(v1, v2));
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(3)).equals("1")) {
-            setInputs(4, 3);
-            showResult(diceSimulator.min(v1, v2));
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(4)).equals("1")) {
-            setInputs(4, 4);
-            showResult(diceSimulator.average(v1, v2));
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(5)).equals("1")) {
-            setInputs(4, 5);
-            showResult(diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2));
-        }
-
-        if (String.valueOf(wordArraySearchMethods.charAt(0)).equals("1")) {
-            setInputs(5, 0);
-            showResult(wordArraySearch.checkIfWordIsInString(v1, v2));
-        }
-        if (String.valueOf(wordArraySearchMethods.charAt(1)).equals("1")) {
-            setInputs(5, 1);
-            showResult(wordArraySearch.getIndexOfWordInString(v1, v2));
-        }
-        if (String.valueOf(wordArraySearchMethods.charAt(2)).equals("1")) {
-            setInputs(5, 2);
-            showResult(wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2));
-        }
+//        if (String.valueOf(oneNumMathMethods.charAt(1)).equals("1")) {
+//            setInput(1, 1);
+//            showResult(oneNumMath.numIsEvenOrOdd(v1));
+//        }
+//        if (String.valueOf(oneNumMathMethods.charAt(2)).equals("1")) {
+//            setInput(1, 2);
+//            showResult(oneNumMath.factorialOfNum(v1));
+//        }
+//        if (String.valueOf(oneNumMathMethods.charAt(3)).equals("1")) {
+//            setInput(1, 3);
+//            showResult(oneNumMath.primeFactorizationOfNum(v1));
+//        }
+//
+//        if (String.valueOf(twoNumMathMethods.charAt(0)).equals("1")) {
+//            setInput(2, 0);
+//            showResult(twoNumMath.getIfAIsDivisibleByB(v1, v2));
+//        }
+//        if (String.valueOf(twoNumMathMethods.charAt(1)).equals("1")) {
+//            setInput(2, 1);
+//            showResult(twoNumMath.divideInDecimals(v1, v2));
+//        }
+//        if (String.valueOf(twoNumMathMethods.charAt(2)).equals("1")) {
+//            setInput(2, 2);
+//            showResult(twoNumMath.divideInReducedImproperFractions(v1, v2));
+//        }
+//        if (String.valueOf(twoNumMathMethods.charAt(3)).equals("1")) {
+//            setInput(2, 3);
+//            showResult(twoNumMath.divideInReducedProperFractions(v1, v2));
+//        }
+//        if (String.valueOf(twoNumMathMethods.charAt(4)).equals("1")) {
+//            setInput(2, 4);
+//            showResult(twoNumMath.getGCF(v1, v2));
+//        }
+//
+//        if (String.valueOf(cypherMethods.charAt(0)).equals("1")) {
+//            setInput(3, 0);
+//            showResult(cypher.encodeCaesarCypher(v1));
+//        }
+//        if (String.valueOf(cypherMethods.charAt(1)).equals("1")) {
+//            setInput(3, 1);
+//            showResult(cypher.decodeCaesarCypher(v1));
+//        }
+//        if (String.valueOf(cypherMethods.charAt(2)).equals("1")) {
+//            setInput(3, 2);
+//            showResult(cypher.encodeAtBashCypher(v1));
+//        }
+//        if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
+//            setInput(3, 3);
+//            showResult(cypher.decodeAtBashCypher(v1));
+//        }
+//
+//        if (String.valueOf(diceSimulatorMethods.charAt(0)).equals("1")) {
+//            setInput(4, 0);
+//            showResult(diceSimulator.roll(v1));
+//        }
+//        if (String.valueOf(diceSimulatorMethods.charAt(1)).equals("1")) {
+//            setInput(4, 1);
+//            showResult(diceSimulator.roll(v1, v2));
+//        }
+//        if (String.valueOf(diceSimulatorMethods.charAt(2)).equals("1")) {
+//            setInput(4, 2);
+//            showResult(diceSimulator.max(v1, v2));
+//        }
+//        if (String.valueOf(diceSimulatorMethods.charAt(3)).equals("1")) {
+//            setInput(4, 3);
+//            showResult(diceSimulator.min(v1, v2));
+//        }
+//        if (String.valueOf(diceSimulatorMethods.charAt(4)).equals("1")) {
+//            setInput(4, 4);
+//            showResult(diceSimulator.average(v1, v2));
+//        }
+//        if (String.valueOf(diceSimulatorMethods.charAt(5)).equals("1")) {
+//            setInput(4, 5);
+//            showResult(diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2));
+//        }
+//
+//        if (String.valueOf(wordArraySearchMethods.charAt(0)).equals("1")) {
+//            setInput(5, 0);
+//            showResult(wordArraySearch.checkIfWordIsInString(v1, v2));
+//        }
+//        if (String.valueOf(wordArraySearchMethods.charAt(1)).equals("1")) {
+//            setInput(5, 1);
+//            showResult(wordArraySearch.getIndexOfWordInString(v1, v2));
+//        }
+//        if (String.valueOf(wordArraySearchMethods.charAt(2)).equals("1")) {
+//            setInput(5, 2);
+//            showResult(wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2));
+//        }
     }
 
-    private void setInputs(int moduleNum, int methodNum) throws IOException {
+    private void runMethod(int moduleNum, int methodNum, Supplier<String> method) throws IOException {
         String correspondingLetter = String.valueOf((char)(methodNum + 1 + 64)).toLowerCase();
-        boolean thereAreMoreInputFiles = true;
-        int currentFileNum = 1;
-        while (thereAreMoreInputFiles) {
-            BufferedReader bufferReader = new BufferedReader(new FileReader("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + currentFileNum + ".txt"));
-            setV(currentFileNum, bufferReader.readLine());
+        int currentFileNum = 0;
+        while (newInputExists(moduleNum, correspondingLetter, currentFileNum)) {
             currentFileNum++;
-            File tempFile = new File("./" + moduleNum + "/ " + correspondingLetter + "input" + currentFileNum + ".txt");
-            if (!(tempFile.exists() && !tempFile.isDirectory())) {
-                thereAreMoreInputFiles = false;
-            }
+            setInput(moduleNum, correspondingLetter, currentFileNum);
+            method.get();
         }
     }
 
-    private void setV(String inputs, String whatToSetTo) {
-        String[] inputArray = inputs.split(",", 4);
-        
+    private boolean newInputExists(int moduleNum, String correspondingLetter, int currentFileNum) {
+        File nextInputFile = new File("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + currentFileNum+1 + ".txt");
+        System.out.println("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + (currentFileNum+1) + ".txt");
+        return (nextInputFile.exists() && !nextInputFile.isDirectory());
+    }
 
+    private void setInput(int moduleNum, String correspondingLetter, int currentFileNum) throws IOException {
+        BufferedReader bufferReader = new BufferedReader(new FileReader("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + currentFileNum + ".txt"));
+        setV(bufferReader.readLine());
+    }
+
+    private void setV(String inputs) {
+        String[] inputArray = inputs.split(",", 4);
+        for (int varInd = 0; varInd < inputArray.length; varInd++) {
+            setV(varInd+1, inputArray[varInd]);
+        }
     }
 
     private void setV(int num, String whatToSetTo) {
@@ -152,7 +157,24 @@ public class Driver {
     }
 
     private void showResult(String result) {
+        // Still going to have error when v's are set but not used
+        resultTextArea.appendText("Input:\n");
+        if (v1 != null) {
+            resultTextArea.appendText(v1);
+        }
+        if (v2 != null) {
+            resultTextArea.appendText("," + v2);
+        }
+        if (v3 != null) {
+            resultTextArea.appendText("," + v3);
+        }
+        if (v4 != null) {
+            resultTextArea.appendText("," + v4);
+        }
+        resultTextArea.appendText("\n");
+        resultTextArea.appendText("Output:\n");
         resultTextArea.appendText(result);
+//        resultTextArea.appendText("\nExpected Result:\n");
     }
 
     public void setV1(String v1) {

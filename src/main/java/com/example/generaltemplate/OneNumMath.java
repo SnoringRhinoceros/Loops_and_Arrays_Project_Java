@@ -7,17 +7,13 @@ public class OneNumMath {
     /*
     num is int
      */
-    public String multiplesOfNum(String num, String numWanted) {
-        System.out.println(num);
-        return "";
-        //        ArrayList<Integer> result = new ArrayList<>();
-//        for (int i=0; i<Integer.parseInt(num)/2; i++) {
-//            if (Integer.parseInt(num) % i == 0) {
-//                result.add(i);
-//                result.add(Integer.parseInt(num)/i);
-//            }
-//        }
-//        return "";
+    public String multiplesOfNum(String numForMultiple, String numWanted) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int numForMultipleInt = Integer.parseInt(numForMultiple);
+        for (int mutipleNum = 1; mutipleNum <= Integer.parseInt(numWanted); mutipleNum++) {
+            result.add(numForMultipleInt*mutipleNum);
+        }
+        return result.toString();
     }
 
     public String numIsEvenOrOdd(String num) {
