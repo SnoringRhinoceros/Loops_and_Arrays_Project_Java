@@ -44,18 +44,10 @@ public class Driver {
             runMethod(2, 0, getIfAIsDivisibleByBRef);
         }
         if (String.valueOf(twoNumMathMethods.charAt(1)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divideInDecimals(v1, v2);
+            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divide(v1, v2, v3);
             runMethod(2, 1, numIsEvenOrOddRef);
         }
         if (String.valueOf(twoNumMathMethods.charAt(2)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divideInReducedImproperFractions(v1, v2);
-            runMethod(2, 2, numIsEvenOrOddRef);
-        }
-        if (String.valueOf(twoNumMathMethods.charAt(3)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divideInReducedProperFractions(v1, v2);
-            runMethod(2, 3, numIsEvenOrOddRef);
-        }
-        if (String.valueOf(twoNumMathMethods.charAt(4)).equals("1")) {
             Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.getGCF(v1, v2);
             runMethod(2, 4, numIsEvenOrOddRef);
         }
