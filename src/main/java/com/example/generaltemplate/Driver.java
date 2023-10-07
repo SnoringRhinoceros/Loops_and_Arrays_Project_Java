@@ -26,94 +26,94 @@ public class Driver {
             Supplier<String> multiplesOfNumRef = () -> oneNumMath.multiplesOfNum(v1, v2);
             runMethod(1, 0, multiplesOfNumRef);
         }
-//        if (String.valueOf(oneNumMathMethods.charAt(1)).equals("1")) {
-//            setInput(1, 1);
-//            showResult(oneNumMath.numIsEvenOrOdd(v1));
-//        }
-//        if (String.valueOf(oneNumMathMethods.charAt(2)).equals("1")) {
-//            setInput(1, 2);
-//            showResult(oneNumMath.factorialOfNum(v1));
-//        }
-//        if (String.valueOf(oneNumMathMethods.charAt(3)).equals("1")) {
-//            setInput(1, 3);
-//            showResult(oneNumMath.primeFactorizationOfNum(v1));
-//        }
-//
-//        if (String.valueOf(twoNumMathMethods.charAt(0)).equals("1")) {
-//            setInput(2, 0);
-//            showResult(twoNumMath.getIfAIsDivisibleByB(v1, v2));
-//        }
-//        if (String.valueOf(twoNumMathMethods.charAt(1)).equals("1")) {
-//            setInput(2, 1);
-//            showResult(twoNumMath.divideInDecimals(v1, v2));
-//        }
-//        if (String.valueOf(twoNumMathMethods.charAt(2)).equals("1")) {
-//            setInput(2, 2);
-//            showResult(twoNumMath.divideInReducedImproperFractions(v1, v2));
-//        }
-//        if (String.valueOf(twoNumMathMethods.charAt(3)).equals("1")) {
-//            setInput(2, 3);
-//            showResult(twoNumMath.divideInReducedProperFractions(v1, v2));
-//        }
-//        if (String.valueOf(twoNumMathMethods.charAt(4)).equals("1")) {
-//            setInput(2, 4);
-//            showResult(twoNumMath.getGCF(v1, v2));
-//        }
-//
-//        if (String.valueOf(cypherMethods.charAt(0)).equals("1")) {
-//            setInput(3, 0);
-//            showResult(cypher.encodeCaesarCypher(v1));
-//        }
-//        if (String.valueOf(cypherMethods.charAt(1)).equals("1")) {
-//            setInput(3, 1);
-//            showResult(cypher.decodeCaesarCypher(v1));
-//        }
-//        if (String.valueOf(cypherMethods.charAt(2)).equals("1")) {
-//            setInput(3, 2);
-//            showResult(cypher.encodeAtBashCypher(v1));
-//        }
-//        if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
-//            setInput(3, 3);
-//            showResult(cypher.decodeAtBashCypher(v1));
-//        }
-//
-//        if (String.valueOf(diceSimulatorMethods.charAt(0)).equals("1")) {
-//            setInput(4, 0);
-//            showResult(diceSimulator.roll(v1));
-//        }
-//        if (String.valueOf(diceSimulatorMethods.charAt(1)).equals("1")) {
-//            setInput(4, 1);
-//            showResult(diceSimulator.roll(v1, v2));
-//        }
-//        if (String.valueOf(diceSimulatorMethods.charAt(2)).equals("1")) {
-//            setInput(4, 2);
-//            showResult(diceSimulator.max(v1, v2));
-//        }
-//        if (String.valueOf(diceSimulatorMethods.charAt(3)).equals("1")) {
-//            setInput(4, 3);
-//            showResult(diceSimulator.min(v1, v2));
-//        }
-//        if (String.valueOf(diceSimulatorMethods.charAt(4)).equals("1")) {
-//            setInput(4, 4);
-//            showResult(diceSimulator.average(v1, v2));
-//        }
-//        if (String.valueOf(diceSimulatorMethods.charAt(5)).equals("1")) {
-//            setInput(4, 5);
-//            showResult(diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2));
-//        }
-//
-//        if (String.valueOf(wordArraySearchMethods.charAt(0)).equals("1")) {
-//            setInput(5, 0);
-//            showResult(wordArraySearch.checkIfWordIsInString(v1, v2));
-//        }
-//        if (String.valueOf(wordArraySearchMethods.charAt(1)).equals("1")) {
-//            setInput(5, 1);
-//            showResult(wordArraySearch.getIndexOfWordInString(v1, v2));
-//        }
-//        if (String.valueOf(wordArraySearchMethods.charAt(2)).equals("1")) {
-//            setInput(5, 2);
-//            showResult(wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2));
-//        }
+        if (String.valueOf(oneNumMathMethods.charAt(1)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> oneNumMath.numIsEvenOrOdd(v1);
+            runMethod(1, 1, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(oneNumMathMethods.charAt(2)).equals("1")) {
+            Supplier<String> factorialOfNumRef = () -> oneNumMath.factorialOfNum(v1);
+            runMethod(1, 2, factorialOfNumRef);
+        }
+        if (String.valueOf(oneNumMathMethods.charAt(3)).equals("1")) {
+            Supplier<String> primeFactorizationOfNumRef = () -> oneNumMath.primeFactorizationOfNum(v1);
+            runMethod(1, 3, primeFactorizationOfNumRef);
+        }
+
+        if (String.valueOf(twoNumMathMethods.charAt(0)).equals("1")) {
+            Supplier<String> getIfAIsDivisibleByBRef = () -> twoNumMath.getIfAIsDivisibleByB(v1, v2);
+            runMethod(2, 0, getIfAIsDivisibleByBRef);
+        }
+        if (String.valueOf(twoNumMathMethods.charAt(1)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divideInDecimals(v1, v2);
+            runMethod(2, 1, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(twoNumMathMethods.charAt(2)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divideInReducedImproperFractions(v1, v2);
+            runMethod(2, 2, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(twoNumMathMethods.charAt(3)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divideInReducedProperFractions(v1, v2);
+            runMethod(2, 3, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(twoNumMathMethods.charAt(4)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.getGCF(v1, v2);
+            runMethod(2, 4, numIsEvenOrOddRef);
+        }
+
+        if (String.valueOf(cypherMethods.charAt(0)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> cypher.encodeCaesarCypher(v1);
+            runMethod(3, 0, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(cypherMethods.charAt(1)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> cypher.decodeCaesarCypher(v1);
+            runMethod(3, 1, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(cypherMethods.charAt(2)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> cypher.encodeAtBashCypher(v1);
+            runMethod(3, 2, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> cypher.decodeAtBashCypher(v1);
+            runMethod(3, 3, numIsEvenOrOddRef);
+        }
+
+        if (String.valueOf(diceSimulatorMethods.charAt(0)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.roll(v1);
+            runMethod(4, 0, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(diceSimulatorMethods.charAt(1)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.roll(v1, v2);
+            runMethod(4, 1, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(diceSimulatorMethods.charAt(2)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.max(v1, v2);
+            runMethod(4, 2, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(diceSimulatorMethods.charAt(3)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.min(v1, v2);
+            runMethod(4, 3, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(diceSimulatorMethods.charAt(4)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.average(v1, v2);
+            runMethod(4, 4, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(diceSimulatorMethods.charAt(5)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2);
+            runMethod(4, 5, numIsEvenOrOddRef);
+        }
+
+        if (String.valueOf(wordArraySearchMethods.charAt(0)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> wordArraySearch.checkIfWordIsInString(v1, v2);
+            runMethod(5, 0, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(wordArraySearchMethods.charAt(1)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> wordArraySearch.getIndexOfWordInString(v1, v2);
+            runMethod(5, 1, numIsEvenOrOddRef);
+        }
+        if (String.valueOf(wordArraySearchMethods.charAt(2)).equals("1")) {
+            Supplier<String> numIsEvenOrOddRef = () -> wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2);
+            runMethod(5, 2, numIsEvenOrOddRef);
+        }
     }
 
     private void runMethod(int moduleNum, int methodNum, Supplier<String> method) throws IOException {
