@@ -5,15 +5,22 @@ import java.util.ArrayList;
 public class OneNumMath {
 
     /*
-    num is int
+    Precondition:
+    User inputs a string of the number that they want the multiple of
+    and another string of how many multiples of that number they want
+
+    returns a string that contains an array of the multiples of a given number up to how many of that number wanted
      */
     public String multiplesOfNum(String numForMultiple, String numWanted) {
-        ArrayList<Integer> result = new ArrayList<>();
         int numForMultipleInt = Integer.parseInt(numForMultiple);
-        for (int mutipleNum = 1; mutipleNum <= Integer.parseInt(numWanted); mutipleNum++) {
-            result.add(numForMultipleInt*mutipleNum);
+        if (numForMultipleInt > 0) {
+            ArrayList<Integer> result = new ArrayList<>();
+            for (int mutipleNum = 1; mutipleNum <= Integer.parseInt(numWanted); mutipleNum++) {
+                result.add(numForMultipleInt*mutipleNum);
+            }
+            return result.toString();
         }
-        return result.toString();
+        return "No multiples";
     }
 
     public String numIsEvenOrOdd(String num) {
