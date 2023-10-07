@@ -119,22 +119,26 @@ public class Driver {
     private void runMethod(int moduleNum, int methodNum, Supplier<String> method) throws IOException {
         String correspondingLetter = String.valueOf((char)(methodNum + 1 + 64)).toLowerCase();
         int currentFileNum = 0;
-        while (newInputExists(moduleNum, correspondingLetter, currentFileNum)) {
+        while (nextInputFileExists(moduleNum, correspondingLetter, currentFileNum)) {
             currentFileNum++;
             setInput(moduleNum, correspondingLetter, currentFileNum);
-            method.get();
+            showResult(method.get(), getExpectedResult(moduleNum, correspondingLetter, currentFileNum));
         }
     }
 
-    private boolean newInputExists(int moduleNum, String correspondingLetter, int currentFileNum) {
-        File nextInputFile = new File("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + currentFileNum+1 + ".txt");
-        System.out.println("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + (currentFileNum+1) + ".txt");
+    private boolean nextInputFileExists(int moduleNum, String correspondingLetter, int currentFileNum) {
+        File nextInputFile = new File("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + (currentFileNum+1) + ".txt");
         return (nextInputFile.exists() && !nextInputFile.isDirectory());
     }
 
     private void setInput(int moduleNum, String correspondingLetter, int currentFileNum) throws IOException {
         BufferedReader bufferReader = new BufferedReader(new FileReader("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/input" + currentFileNum + ".txt"));
         setV(bufferReader.readLine());
+    }
+
+    private String getExpectedResult(int moduleNum, String correspondingLetter, int currentFileNum) throws IOException {
+        BufferedReader bufferReader = new BufferedReader(new FileReader("src/main/java/com/example/generaltemplate/Test_Cases/" + moduleNum + "/" + correspondingLetter + "/output" + currentFileNum + ".txt"));
+        return bufferReader.readLine();
     }
 
     private void setV(String inputs) {
@@ -156,7 +160,7 @@ public class Driver {
         }
     }
 
-    private void showResult(String result) {
+    private void showResult(String result, String expectedResult) {
         // Still going to have error when v's are set but not used
         resultTextArea.appendText("Input:\n");
         if (v1 != null) {
@@ -174,7 +178,9 @@ public class Driver {
         resultTextArea.appendText("\n");
         resultTextArea.appendText("Output:\n");
         resultTextArea.appendText(result);
-//        resultTextArea.appendText("\nExpected Result:\n");
+        resultTextArea.appendText("\nExpected Result:\n");
+        resultTextArea.appendText(expectedResult);
+        resultTextArea.appendText("\n\n");
     }
 
     public void setV1(String v1) {
