@@ -35,10 +35,29 @@ public class Cypher {
         return result.toString();
     }
 
+    /*
+    Precondition:
+    User inputs 2 strings:
+    First string can be any set of ASCII characters
+    Second string is an integer
+
+    returns a new string with all the english alphabet letters in input1 shifted to the right input2 times
+     */
     public String encodeCaesarCypher(String textToEncode, String howFarToEncode) {
         return encodeCypher(textToEncode, howFarToEncode, "C");
     }
 
+    /*
+    Precondition:
+    User inputs 2 strings:
+    First string can be any set of ASCII characters
+    Second string is an integer or null
+
+    if second input is not null:
+    returns a new string with all the english alphabet letters in input1 shifted to the left input2 times
+    else if second input is null:
+    returns all possible unique outputs given input1 and without knowing input2
+     */
     public String decodeCaesarCypher(String textToDecode, String howFarToDecode) {
         if (howFarToDecode == null) {
             return decodeCaesarCypher(textToDecode);
@@ -48,8 +67,8 @@ public class Cypher {
 
     private String decodeCaesarCypher(String textToDecode) {
         StringBuilder allCyphers = new StringBuilder();
-        for (int howFarToDecode=1; howFarToDecode<26; howFarToDecode++) {
-            if (howFarToDecode != 1) {
+        for (int howFarToDecode=0; howFarToDecode<26; howFarToDecode++) {
+            if (howFarToDecode != 0) {
                 allCyphers.append("\n");
             }
             allCyphers.append(encodeCypher(textToDecode, String.valueOf(howFarToDecode*-1), "C"));
@@ -57,10 +76,22 @@ public class Cypher {
         return allCyphers.toString();
     }
 
+    /*
+    Precondition:
+    User inputs 1 string that can contain any set of ASCII characters
+
+    returns the at-bash cypher of that string
+     */
     public String encodeAtBashCypher(String textToEncode) {
         return encodeCypher(textToEncode, "0","A");
     }
 
+    /*
+    Precondition:
+    User inputs 1 string that can contain any set of ASCII characters
+
+    returns the decoded at-bash cypher of that string
+     */
     public String decodeAtBashCypher(String textToDecode) {
         return encodeCypher(textToDecode, "0", "A");
     }
