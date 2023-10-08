@@ -118,6 +118,17 @@ public class DiceSimulator {
         return result.toString();
     }
 
+    /*
+    Precondition:
+    User inputs 4 strings:
+    First string is a positive integer of how many faces there are on each die
+    Second string is a positive integer of how many dice there are in total
+    Third string is a percentage between 1-100 inclusive (without the % sign) that the weighted face will show
+    Fourth string is a positive integer between 1-First string inclusive that designates which face is weighted
+
+    Simulates rolling a weighted die with input1 faces input2 times and a weighted face of input4 that appears input3 percent of the time
+    returns a string containing an array of how many times each value is rolled
+     */
     public String weightedRoll(String faces, String rolls, String probOfWeightedFace, String whichFaceIsWeighted) {
         ArrayList<String> allRolls = new ArrayList<>();
         for (int rollNum=0; rollNum<Integer.parseInt(rolls); rollNum++) {
