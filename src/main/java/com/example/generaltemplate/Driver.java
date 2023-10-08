@@ -95,8 +95,8 @@ public class Driver {
             runMethod(5, 1, getIndexOfWordInStringRef);
         }
         if (String.valueOf(wordArraySearchMethods.charAt(2)).equals("1")) {
-            Supplier<String> getAllWordsThatContainAWordInAStringRef = () -> wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2);
-            runMethod(5, 2, getAllWordsThatContainAWordInAStringRef);
+            Supplier<String> getAllWordsThatContainAPhraseInAStringRef = () -> wordArraySearch.getAllWordsThatContainAPhraseInAString(v1, v2);
+            runMethod(5, 2, getAllWordsThatContainAPhraseInAStringRef);
         }
     }
 
