@@ -70,28 +70,20 @@ public class Driver {
         }
 
         if (String.valueOf(diceSimulatorMethods.charAt(0)).equals("1")) {
-            Supplier<String> rollRef = () -> diceSimulator.roll(v1);
+            Supplier<String> rollRef = () -> diceSimulator.roll(v1, v2, v3);
             runMethod(4, 0, rollRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(1)).equals("1")) {
-            Supplier<String> rollRef = () -> diceSimulator.roll(v1, v2);
+            Supplier<String> rollRef = () -> diceSimulator.minMaxAndAvg(v1, v2, v3);
             runMethod(4, 1, rollRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(2)).equals("1")) {
-            Supplier<String> maxRef = () -> diceSimulator.max(v1, v2);
+            Supplier<String> maxRef = () -> diceSimulator.howManyOfEachSum(v1, v2, v3);
             runMethod(4, 2, maxRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(3)).equals("1")) {
-            Supplier<String> minRef = () -> diceSimulator.min(v1, v2);
+            Supplier<String> minRef = () -> diceSimulator.weightedRoll(v1, v2, v3, v4);
             runMethod(4, 3, minRef);
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(4)).equals("1")) {
-            Supplier<String> averageRef = () -> diceSimulator.average(v1, v2);
-            runMethod(4, 4, averageRef);
-        }
-        if (String.valueOf(diceSimulatorMethods.charAt(5)).equals("1")) {
-            Supplier<String> totalCombinationsOfSumWithGivenDiceRef = () -> diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2);
-            runMethod(4, 5, totalCombinationsOfSumWithGivenDiceRef);
         }
 
         if (String.valueOf(wordArraySearchMethods.charAt(0)).equals("1")) {
