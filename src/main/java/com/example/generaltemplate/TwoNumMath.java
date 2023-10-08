@@ -14,12 +14,10 @@ public class TwoNumMath {
     returns if first string number is divisible by second string number
      */
     public String getIfAIsDivisibleByB(String num1, String num2) {
-        // For some reason 2 is divisible by 6
-        return "";
-//        if (num2.equals("0")) {
-//            return "false";
-//        }
-//        return String.valueOf(Integer.parseInt(num1) % Integer.parseInt(num2) == 0);
+        if (num2.equals("0")) {
+            return "false";
+        }
+        return String.valueOf(Integer.parseInt(num1) % Integer.parseInt(num2) == 0);
     }
 
 

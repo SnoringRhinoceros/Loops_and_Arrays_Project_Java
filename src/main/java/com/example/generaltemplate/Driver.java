@@ -53,11 +53,11 @@ public class Driver {
         }
 
         if (String.valueOf(cypherMethods.charAt(0)).equals("1")) {
-            Supplier<String> encodeCaesarCypherRef = () -> cypher.encodeCaesarCypher(v1);
+            Supplier<String> encodeCaesarCypherRef = () -> cypher.encodeCaesarCypher(v1, v2);
             runMethod(3, 0, encodeCaesarCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(1)).equals("1")) {
-            Supplier<String> decodeCaesarCypherRef = () -> cypher.decodeCaesarCypher(v1);
+            Supplier<String> decodeCaesarCypherRef = () -> cypher.decodeCaesarCypher(v1, v2);
             runMethod(3, 1, decodeCaesarCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(2)).equals("1")) {
@@ -65,7 +65,7 @@ public class Driver {
             runMethod(3, 2, encodeAtBashCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
-            Supplier<String> decodeAtBashCypherRef = () -> cypher.decodeAtBashCypher(v1);
+            Supplier<String> decodeAtBashCypherRef = () -> cypher.decodeAtBashCypher(v1, v2);
             runMethod(3, 3, decodeAtBashCypherRef);
         }
 
