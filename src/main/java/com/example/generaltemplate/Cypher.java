@@ -40,7 +40,21 @@ public class Cypher {
     }
 
     public String decodeCaesarCypher(String textToDecode, String howFarToDecode) {
+        if (howFarToDecode == null) {
+            return decodeCaesarCypher(textToDecode);
+        }
         return encodeCypher(textToDecode, String.valueOf(Integer.parseInt(howFarToDecode)*-1), "C");
+    }
+
+    private String decodeCaesarCypher(String textToDecode) {
+        StringBuilder allCyphers = new StringBuilder();
+        for (int howFarToDecode=1; howFarToDecode<26; howFarToDecode++) {
+            if (howFarToDecode != 1) {
+                allCyphers.append("\n");
+            }
+            allCyphers.append(encodeCypher(textToDecode, String.valueOf(howFarToDecode*-1), "C"));
+        }
+        return allCyphers.toString();
     }
 
     public String encodeAtBashCypher(String textToEncode) {

@@ -135,6 +135,7 @@ public class Driver {
 
     private void setV(String inputs) {
         String[] inputArray = inputs.split(",", 4);
+        clearV();
         for (int varInd = 0; varInd < inputArray.length; varInd++) {
             setV(varInd+1, inputArray[varInd]);
         }
@@ -150,6 +151,13 @@ public class Driver {
         } else if (num == 4) {
             setV4(whatToSetTo);
         }
+    }
+
+    private void clearV() {
+        setV1(null);
+        setV2(null);
+        setV3(null);
+        setV4(null);
     }
 
     private void showResult(String result, String expectedResult) {
