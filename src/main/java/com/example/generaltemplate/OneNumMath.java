@@ -11,7 +11,7 @@ public class OneNumMath {
     User inputs a string of the integer that they want the multiple of
     and another string of how many multiples of that number they want
 
-    returns a string that contains an array of the multiples of a given number up to how many of that number wanted
+    returns a string that contains an array of the first input2 multiples of input1 (not including 1)
     or No multiples if the first parameter isn't greater than 0.
      */
     public String multiplesOfNum(String numForMultiple, String numWanted) {
