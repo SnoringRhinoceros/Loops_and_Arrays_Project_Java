@@ -17,7 +17,7 @@ public class DiceSimulator {
     Second string is a positive integer of how many dice there are in total
     Third string is a positive integer of how many times they want to roll
 
-    returns the sum of input2 dice with input1 faces input3 times as a string containing an array
+    returns the sum of input2 randomly rolled dice with input1 faces input3 times as a string containing an array
      */
     public String roll(String faces, String numDice, String rolls) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -38,7 +38,7 @@ public class DiceSimulator {
     Second string is a positive integer of how many dice there are in total
     Third string is a positive integer of how many times they want to roll
 
-    Simulates rolling the die (the sum of input2 dice with input1 faces input3 times as a string containing an array)
+    Simulates rolling the die (the sum of input2 randomly rolled dice with input1 faces input3 times as a string containing an array)
     returns the minimum, maximum, and average of die rolled
      */
     public String minMaxAndAvg(String faces, String numDice, String rolls) {
@@ -58,7 +58,7 @@ public class DiceSimulator {
         }
         BigDecimal avg = new BigDecimal(sum);
         avg = avg.divide(BigDecimal.valueOf(allRolls.size()), 2, RoundingMode.HALF_UP).stripTrailingZeros();
-        return "Min=" + min + ", Max=" + max + " , Avg=" + avg;
+        return "Min=" + min + ", Max=" + max + ", Avg=" + avg;
     }
 
     private ArrayList<String> turnStringIntoArray(String strInput) {
@@ -69,12 +69,69 @@ public class DiceSimulator {
         return result;
     }
 
-    public String howManyOfEachSum(String faces, String dice, String rolls) {
-        return "";
+    /*
+    Precondition:
+    User inputs 3 strings:
+    First string is a positive integer of how many faces there are on each die
+    Second string is a positive integer of how many dice there are in total
+    Third string is a positive integer of how many times they want to roll
+
+    Simulates rolling the die (the sum of input2 randomly rolled dice with input1 faces input3 times as a string containing an array)
+    returns how many times the sum of the die is equal to each possible sum in a string containing an array
+
+    Example: roll 2 die 20 times.
+    Should give you an array with spots for sums 2-12
+    and the numbers in those spots represent the total number rolls that produced that sum.
+     */
+    public String howManyOfEachSum(String faces, String numDice, String rolls) {
+        ArrayList<String> allRolls = turnStringIntoArray(roll(faces, numDice, rolls));
+        ArrayList<Integer> result = new ArrayList<>();
+        String minAndMax = minMaxAndAvg(faces, numDice, rolls);
+        int min = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Min=")+3+1, minAndMax.indexOf(", Max")));;
+        int max = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Max=")+3+1, minAndMax.indexOf(", Avg")));
+        for (int currentNum = min; currentNum <= max; currentNum++) {
+            int timesSame = 0;
+            for (String roll: allRolls) {
+                if (Integer.parseInt(roll) == currentNum) {
+                    timesSame++;
+                }
+            }
+            result.add(timesSame);
+        }
+        return result.toString();
+    }
+
+    private String howManyOfEachSum(String faces, String numDice, String rolls, ArrayList<String> allRolls) {
+        ArrayList<Integer> result = new ArrayList<>();
+        String minAndMax = minMaxAndAvg(faces, numDice, rolls);
+        int min = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Min=")+3+1, minAndMax.indexOf(", Max")));;
+        int max = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Max=")+3+1, minAndMax.indexOf(", Avg")));
+        for (int currentNum = min; currentNum <= max; currentNum++) {
+            int timesSame = 0;
+            for (String roll: allRolls) {
+                if (Integer.parseInt(roll) == currentNum) {
+                    timesSame++;
+                }
+            }
+            result.add(timesSame);
+        }
+        return result.toString();
     }
 
     public String weightedRoll(String faces, String rolls, String probOfWeightedFace, String whichFaceIsWeighted) {
-        return "";
-    }
+        ArrayList<String> allRolls = new ArrayList<>();
+        for (int rollNum=0; rollNum<Integer.parseInt(rolls); rollNum++) {
+            if (generateRandNum(1, 100) <= Integer.parseInt(probOfWeightedFace)) {
+                allRolls.add(whichFaceIsWeighted);
+            } else {
+                int randNum = generateRandNum(1, Integer.parseInt(faces)-1);
+                if (randNum >= Integer.parseInt(whichFaceIsWeighted)) {
+                    randNum++;
+                }
+                allRolls.add(String.valueOf(randNum));
+            }
+        }
 
+        return howManyOfEachSum(faces, "1", "1000000", allRolls);
+    }
 }

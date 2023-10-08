@@ -1,0 +1,1 @@
+An array of length 6 with the element at 2nd index way bigger than the rest
