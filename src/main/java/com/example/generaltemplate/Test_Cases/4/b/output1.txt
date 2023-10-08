@@ -1,1 +1,1 @@
-Min=1, Max=4, Avg=2.7 sample
+Min=1, Max=6, Avg=2.7 sample
