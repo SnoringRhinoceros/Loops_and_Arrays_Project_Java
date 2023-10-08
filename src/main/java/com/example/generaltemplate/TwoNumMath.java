@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class TwoNumMath {
     /*
@@ -44,9 +43,6 @@ public class TwoNumMath {
     }
 
     private String divideInFractions(String numerator, String denominator, String type) {
-        if (numerator.equals("12") && Objects.equals(type, "I")) {
-            String foo = "1";
-        }
         OneNumMath oneNumMath = new OneNumMath();
         String numeratorPrimeFactors = oneNumMath.primeFactorizationOfNum(numerator);
         String denominatorPrimeFactors = oneNumMath.primeFactorizationOfNum(denominator);

@@ -8,7 +8,7 @@ public class Cypher {
     private String encodeCypher(String textToEncode, String howFarToEncode, String type) {
         ArrayList<String> textToEncodeArray = new ArrayList<>(List.of(textToEncode.split("")));
         ArrayList<String> lowercaseAlphabet = new ArrayList<>(List.of("abcdefghijklmnopqrstuvwxyz".split("")));
-        ArrayList<String> resultArray = new ArrayList<>();
+        StringBuilder result = new StringBuilder();
         for (String character : textToEncodeArray) {
             if (((int) 'A' <= (int) character.charAt(0) && (int) character.charAt(0) <= (int) 'Z') || (int) 'a' <= (int) character.charAt(0) && (int) character.charAt(0) <= (int) 'z') {
                 int translatedCharacter = 0;
@@ -21,22 +21,18 @@ public class Cypher {
                     translatedCharacter += translatedCharacter/26 + 26;
                 }
                 translatedCharacter = translatedCharacter % 26;
-                resultArray.add(lowercaseAlphabet.get(translatedCharacter));
-            } else {
-                resultArray.add(character);
-            }
-        }
 
-        // fix capitalization
-        String resultString = "";
-        for (int letterInd=0; letterInd<resultArray.size(); letterInd++) {
-            if (lowercaseAlphabet.contains(textToEncodeArray.get(letterInd))) {
-                resultString += resultArray.get(letterInd);
+                // check capitalization
+                if (lowercaseAlphabet.contains(character)) {
+                    result.append(lowercaseAlphabet.get(translatedCharacter));
+                } else {
+                    result.append(lowercaseAlphabet.get(translatedCharacter).toUpperCase());
+                }
             } else {
-                resultString += resultArray.get(letterInd).toUpperCase();
+                result.append(character);
             }
         }
-        return resultString;
+        return result.toString();
     }
 
     public String encodeCaesarCypher(String textToEncode, String howFarToEncode) {
