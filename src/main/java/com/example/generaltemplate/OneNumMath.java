@@ -81,7 +81,7 @@ public class OneNumMath {
         factors.add(numInt);
         while (true) {
             for (int numToTest : factors) {
-                int factorOfNumToTest = getFactor(numToTest);
+                int factorOfNumToTest = getPrimeFactor(numToTest);
                 if (factorOfNumToTest != -1) {
                     factors.remove((Integer) numToTest);
                     factors.add(factorOfNumToTest);
@@ -95,7 +95,7 @@ public class OneNumMath {
         }
     }
 
-    private int getFactor(int num) {
+    private int getPrimeFactor(int num) {
         if (num<2) {
             return -1;
         }

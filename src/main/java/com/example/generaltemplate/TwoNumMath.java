@@ -52,20 +52,14 @@ public class TwoNumMath {
         OneNumMath oneNumMath = new OneNumMath();
         String numeratorPrimeFactors = oneNumMath.primeFactorizationOfNum(numerator);
         String denominatorPrimeFactors = oneNumMath.primeFactorizationOfNum(denominator);
+        ArrayList<String> numeratorPrimeFactorsArray = turnStringIntoArray(numeratorPrimeFactors);
+        ArrayList<String> denominatorPrimeFactorsArray = turnStringIntoArray(denominatorPrimeFactors);
         if (!(numeratorPrimeFactors.equals("Not possible") || denominatorPrimeFactors.equals("Not possible"))) {
-            ArrayList<String> numeratorPrimeFactorsArray = turnStringIntoArray(numeratorPrimeFactors);
-            ArrayList<String> denominatorPrimeFactorsArray = turnStringIntoArray(denominatorPrimeFactors);
-            ArrayList<String> NumToRemoveInNumeratorPrimeFactorsArray = new ArrayList<>();
-            for (int numInd = 0; numInd < numeratorPrimeFactorsArray.size(); numInd++) {
-                if (numInd > denominatorPrimeFactorsArray.size()) {
-                    break;
-                }
-                if (denominatorPrimeFactorsArray.contains(numeratorPrimeFactorsArray.get(numInd))) {
-                    denominatorPrimeFactorsArray.remove(numeratorPrimeFactorsArray.get(numInd));
-                    NumToRemoveInNumeratorPrimeFactorsArray.add(numeratorPrimeFactorsArray.get(numInd));
-                }
+            ArrayList<String> commonFactors = getCommonPrimeFactors(numerator, denominator);
+            for (String factor: commonFactors) {
+                numeratorPrimeFactorsArray.remove(factor);
+                denominatorPrimeFactorsArray.remove(factor);
             }
-            numeratorPrimeFactorsArray.removeAll(NumToRemoveInNumeratorPrimeFactorsArray);
             numerator = String.valueOf(multiplyAllNumsInAList(numeratorPrimeFactorsArray));
             denominator = String.valueOf(multiplyAllNumsInAList(denominatorPrimeFactorsArray));
         }
@@ -103,7 +97,26 @@ public class TwoNumMath {
         return result;
     }
 
+    private ArrayList<String> getCommonPrimeFactors(String num1, String num2) {
+        OneNumMath oneNumMath = new OneNumMath();
+        String num1PrimeFactors = oneNumMath.primeFactorizationOfNum(num1);
+        String num2PrimeFactors = oneNumMath.primeFactorizationOfNum(num2);
+        ArrayList<String> num1PrimeFactorsArray = turnStringIntoArray(num1PrimeFactors);
+        ArrayList<String> num2PrimeFactorsArray = turnStringIntoArray(num2PrimeFactors);
+        ArrayList<String> commonPrimeFactors = new ArrayList<>();
+        for (int numInd = 0; numInd < num1PrimeFactorsArray.size(); numInd++) {
+            if (numInd > num2PrimeFactorsArray.size()) {
+                break;
+            }
+            if (num2PrimeFactorsArray.contains(num1PrimeFactorsArray.get(numInd))) {
+                num2PrimeFactorsArray.remove(num1PrimeFactorsArray.get(numInd));
+                commonPrimeFactors.add(num1PrimeFactorsArray.get(numInd));
+            }
+        }
+        return commonPrimeFactors;
+    }
+
     public String getGCF(String num1, String num2) {
-        return "";
+        return String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2))).equals("1") ? "none" : String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2)));
     }
 }

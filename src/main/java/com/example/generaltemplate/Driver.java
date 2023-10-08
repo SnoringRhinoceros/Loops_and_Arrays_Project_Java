@@ -44,67 +44,67 @@ public class Driver {
             runMethod(2, 0, getIfAIsDivisibleByBRef);
         }
         if (String.valueOf(twoNumMathMethods.charAt(1)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.divide(v1, v2, v3);
-            runMethod(2, 1, numIsEvenOrOddRef);
+            Supplier<String> divideRef = () -> twoNumMath.divide(v1, v2, v3);
+            runMethod(2, 1, divideRef);
         }
         if (String.valueOf(twoNumMathMethods.charAt(2)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> twoNumMath.getGCF(v1, v2);
-            runMethod(2, 4, numIsEvenOrOddRef);
+            Supplier<String> getGCFRef = () -> twoNumMath.getGCF(v1, v2);
+            runMethod(2, 2, getGCFRef);
         }
 
         if (String.valueOf(cypherMethods.charAt(0)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> cypher.encodeCaesarCypher(v1);
-            runMethod(3, 0, numIsEvenOrOddRef);
+            Supplier<String> encodeCaesarCypherRef = () -> cypher.encodeCaesarCypher(v1);
+            runMethod(3, 0, encodeCaesarCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(1)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> cypher.decodeCaesarCypher(v1);
-            runMethod(3, 1, numIsEvenOrOddRef);
+            Supplier<String> decodeCaesarCypherRef = () -> cypher.decodeCaesarCypher(v1);
+            runMethod(3, 1, decodeCaesarCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(2)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> cypher.encodeAtBashCypher(v1);
-            runMethod(3, 2, numIsEvenOrOddRef);
+            Supplier<String> encodeAtBashCypherRef = () -> cypher.encodeAtBashCypher(v1);
+            runMethod(3, 2, encodeAtBashCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> cypher.decodeAtBashCypher(v1);
-            runMethod(3, 3, numIsEvenOrOddRef);
+            Supplier<String> decodeAtBashCypherRef = () -> cypher.decodeAtBashCypher(v1);
+            runMethod(3, 3, decodeAtBashCypherRef);
         }
 
         if (String.valueOf(diceSimulatorMethods.charAt(0)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.roll(v1);
-            runMethod(4, 0, numIsEvenOrOddRef);
+            Supplier<String> rollRef = () -> diceSimulator.roll(v1);
+            runMethod(4, 0, rollRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(1)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.roll(v1, v2);
-            runMethod(4, 1, numIsEvenOrOddRef);
+            Supplier<String> rollRef = () -> diceSimulator.roll(v1, v2);
+            runMethod(4, 1, rollRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(2)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.max(v1, v2);
-            runMethod(4, 2, numIsEvenOrOddRef);
+            Supplier<String> maxRef = () -> diceSimulator.max(v1, v2);
+            runMethod(4, 2, maxRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(3)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.min(v1, v2);
-            runMethod(4, 3, numIsEvenOrOddRef);
+            Supplier<String> minRef = () -> diceSimulator.min(v1, v2);
+            runMethod(4, 3, minRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(4)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.average(v1, v2);
-            runMethod(4, 4, numIsEvenOrOddRef);
+            Supplier<String> averageRef = () -> diceSimulator.average(v1, v2);
+            runMethod(4, 4, averageRef);
         }
         if (String.valueOf(diceSimulatorMethods.charAt(5)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2);
-            runMethod(4, 5, numIsEvenOrOddRef);
+            Supplier<String> totalCombinationsOfSumWithGivenDiceRef = () -> diceSimulator.totalCombinationsOfSumWithGivenDice(v1, v2);
+            runMethod(4, 5, totalCombinationsOfSumWithGivenDiceRef);
         }
 
         if (String.valueOf(wordArraySearchMethods.charAt(0)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> wordArraySearch.checkIfWordIsInString(v1, v2);
-            runMethod(5, 0, numIsEvenOrOddRef);
+            Supplier<String> checkIfWordIsInStringRef = () -> wordArraySearch.checkIfWordIsInString(v1, v2);
+            runMethod(5, 0, checkIfWordIsInStringRef);
         }
         if (String.valueOf(wordArraySearchMethods.charAt(1)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> wordArraySearch.getIndexOfWordInString(v1, v2);
-            runMethod(5, 1, numIsEvenOrOddRef);
+            Supplier<String> getIndexOfWordInStringRef = () -> wordArraySearch.getIndexOfWordInString(v1, v2);
+            runMethod(5, 1, getIndexOfWordInStringRef);
         }
         if (String.valueOf(wordArraySearchMethods.charAt(2)).equals("1")) {
-            Supplier<String> numIsEvenOrOddRef = () -> wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2);
-            runMethod(5, 2, numIsEvenOrOddRef);
+            Supplier<String> getAllWordsThatContainAWordInAStringRef = () -> wordArraySearch.getAllWordsThatContainAWordInAString(v1, v2);
+            runMethod(5, 2, getAllWordsThatContainAWordInAStringRef);
         }
     }
 
