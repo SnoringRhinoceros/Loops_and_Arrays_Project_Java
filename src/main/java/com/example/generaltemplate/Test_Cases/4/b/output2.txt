@@ -1,0 +1,1 @@
+Min=2, Max=12, Avg=7 sample
