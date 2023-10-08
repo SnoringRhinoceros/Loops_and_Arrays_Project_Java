@@ -65,7 +65,7 @@ public class Driver {
             runMethod(3, 2, encodeAtBashCypherRef);
         }
         if (String.valueOf(cypherMethods.charAt(3)).equals("1")) {
-            Supplier<String> decodeAtBashCypherRef = () -> cypher.decodeAtBashCypher(v1, v2);
+            Supplier<String> decodeAtBashCypherRef = () -> cypher.decodeAtBashCypher(v1);
             runMethod(3, 3, decodeAtBashCypherRef);
         }
 

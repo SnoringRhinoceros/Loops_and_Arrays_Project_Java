@@ -44,14 +44,14 @@ public class Cypher {
     }
 
     public String decodeCaesarCypher(String textToDecode, String howFarToDecode) {
-        return "";
+        return encodeCypher(textToDecode, String.valueOf(Integer.parseInt(howFarToDecode)*-1), "C");
     }
 
     public String encodeAtBashCypher(String textToEncode) {
         return encodeCypher(textToEncode, "0","A");
     }
 
-    public String decodeAtBashCypher(String textToDecode, String howFarToDecode) {
-        return "";
+    public String decodeAtBashCypher(String textToDecode) {
+        return encodeCypher(textToDecode, "0", "A");
     }
 }
