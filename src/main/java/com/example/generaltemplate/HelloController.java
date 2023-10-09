@@ -31,6 +31,6 @@ public class HelloController {
     }
     @FXML
     public void handleTestEverythingBtnClick(ActionEvent event) throws IOException {
-        driver.run("0000","000","0000","0000","010");
+        driver.run("0000","000","0000","0000","001");
     }
 }

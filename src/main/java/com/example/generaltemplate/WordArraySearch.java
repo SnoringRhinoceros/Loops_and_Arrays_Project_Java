@@ -54,14 +54,17 @@ public class WordArraySearch {
                 result.add(wordContainingPhrase);
             }
         }
+        if (result.toString().equals("[]")) {
+            return "none";
+        }
         return result.toString();
     }
 
     private String wordWithPhrase(String phrase, String word) {
-        ArrayList<String> letterArray = new ArrayList<>(List.of(word.split(" ")));
+        ArrayList<String> letterArray = new ArrayList<>(List.of(word.split("")));
         for (int pointer1 = 0; pointer1 < letterArray.size(); pointer1++) {
-            for (int pointer2 = pointer1+1; pointer2 < letterArray.size(); pointer2++) {
-                if (word.substring(pointer1, pointer1+1).equals(phrase)) {
+            for (int pointer2 = pointer1+1; pointer2 < letterArray.size()+1; pointer2++) {
+                if (word.substring(pointer1, pointer2).equals(phrase)) {
                     return word;
                 }
             }
