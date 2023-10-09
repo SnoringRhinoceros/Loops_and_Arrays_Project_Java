@@ -110,6 +110,13 @@ public class TwoNumMath {
         return commonPrimeFactors;
     }
 
+    /*
+    Precondition:
+    User inputs 2 strings
+    Both strings must be positive integers
+
+    returns the greatest common factor of the two inputs or none if there is none
+     */
     public String getGCF(String num1, String num2) {
         return String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2))).equals("1") ? "none" : String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2)));
     }

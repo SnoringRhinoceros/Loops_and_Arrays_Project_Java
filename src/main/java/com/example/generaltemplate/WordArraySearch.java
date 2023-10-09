@@ -24,6 +24,14 @@ public class WordArraySearch {
         return "false";
     }
 
+    /*
+    Precondition:
+    User inputs 2 strings:
+    First string can be any legal string
+    Second string can be any legal string without spaces
+
+    returns a string containing an array of all the words in input1 that have input2 inside of it
+     */
     public String getIndexOfWordInString(String text, String wordToFind) {
         ArrayList<String> wordsArray = new ArrayList<>(List.of(text.split(" ")));
         for (int wordInd=0; wordInd<wordsArray.size(); wordInd++) {
