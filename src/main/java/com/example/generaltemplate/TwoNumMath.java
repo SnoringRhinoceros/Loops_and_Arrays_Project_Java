@@ -32,7 +32,7 @@ public class TwoNumMath {
         return switch (outputType) {
             case "D" -> divideInDecimals(num1, num2);
             case "P", "I" -> divideInFractions(num1, num2, outputType);
-            default -> null;
+            default -> "invalid 3rd parameter";
         };
     }
 
