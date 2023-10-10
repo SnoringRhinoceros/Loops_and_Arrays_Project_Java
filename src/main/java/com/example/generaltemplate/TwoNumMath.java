@@ -24,11 +24,14 @@ public class TwoNumMath {
     Precondition:
     User inputs 3 strings:
     The first two are the numbers to divide
-    The third is the type of output the user wants (D is decimal, P is proper fraction, I is improper fraction)
+    The third is the type of output the user wants (D means decimal, P means proper fraction, I means improper fraction)
 
     returns the first input divided by the second input in the 3rd input format
      */
     public String divide(String num1, String num2, String outputType) {
+        if (num2.equals("0")) {
+            return "Not possible";
+        }
         return switch (outputType) {
             case "D" -> divideInDecimals(num1, num2);
             case "P", "I" -> divideInFractions(num1, num2, outputType);
@@ -44,32 +47,50 @@ public class TwoNumMath {
 
     private String divideInFractions(String numerator, String denominator, String type) {
         OneNumMath oneNumMath = new OneNumMath();
-        String numeratorPrimeFactors = oneNumMath.primeFactorizationOfNum(numerator);
-        String denominatorPrimeFactors = oneNumMath.primeFactorizationOfNum(denominator);
-        ArrayList<String> numeratorPrimeFactorsArray = turnStringIntoArray(numeratorPrimeFactors);
-        ArrayList<String> denominatorPrimeFactorsArray = turnStringIntoArray(denominatorPrimeFactors);
-        if (!(numeratorPrimeFactors.equals("Not possible") || denominatorPrimeFactors.equals("Not possible"))) {
-            ArrayList<String> commonFactors = getCommonPrimeFactors(numerator, denominator);
-            for (String factor: commonFactors) {
-                numeratorPrimeFactorsArray.remove(factor);
-                denominatorPrimeFactorsArray.remove(factor);
-            }
-            numerator = String.valueOf(multiplyAllNumsInAList(numeratorPrimeFactorsArray));
-            denominator = String.valueOf(multiplyAllNumsInAList(denominatorPrimeFactorsArray));
-        }
-
         int numeratorInt = Integer.parseInt(numerator);
         int denominatorInt = Integer.parseInt(denominator);
-        if (type.equals("I") || (type.equals("P") && (numeratorInt<denominatorInt) || numeratorInt-(denominatorInt*(numeratorInt/denominatorInt)) == 0)) {
-            return numerator + getBottomPart(numerator, denominator);
+        String denominatorPrimeFactors = oneNumMath.primeFactorizationOfNum(denominator);
+        ArrayList<String> denominatorPrimeFactorsArray = turnStringIntoArray(denominatorPrimeFactors);
+        ArrayList<String> notCanceledDenominatorPrimeFactorsArray = new ArrayList<>();
+        if (!denominatorPrimeFactors.equals("Not possible")) {
+            for (String primeFactor: denominatorPrimeFactorsArray) {
+                int primeFactorInt = Integer.parseInt(primeFactor);
+                if (numeratorInt % primeFactorInt == 0) {
+                    numeratorInt /= primeFactorInt;
+                } else {
+                    notCanceledDenominatorPrimeFactorsArray.add(primeFactor);
+                }
+            }
+            denominatorInt = multiplyAllNumsInAList(notCanceledDenominatorPrimeFactorsArray);
+        }
+        if (type.equals("I")) {
+            return getFractionPart(numeratorInt, denominatorInt);
         } else if (type.equals("P")) {
-            return (numeratorInt/denominatorInt) + " " + (numeratorInt-(denominatorInt*(numeratorInt/denominatorInt))) + getBottomPart(numerator, denominator);
+            return reduceFraction(numeratorInt, denominatorInt);
         }
         return null;
     }
 
-    private String getBottomPart(String numerator, String denominator) {
-        if (denominator.equals("1") || (Integer.parseInt(numerator) % Integer.parseInt(denominator) == 0)) {
+    private String reduceFraction(int numerator, int denominator) {
+        return getFrontNum(numerator, denominator) + getFractionPart(numerator-((numerator/denominator) * denominator), denominator);
+    }
+
+    private String getFractionPart(int numerator, int denominator) {
+        if (numerator == 0) {
+            return "";
+        }
+        return numerator + getBottomPart(denominator);
+    }
+
+    private String getFrontNum(int numerator, int denominator) {
+        if (numerator/denominator == 0) {
+            return "";
+        }
+        return numerator/denominator + " ";
+    }
+
+    private String getBottomPart(int denominator) {
+        if (denominator == 1) {
             return "";
         }
         return "/" + denominator;
