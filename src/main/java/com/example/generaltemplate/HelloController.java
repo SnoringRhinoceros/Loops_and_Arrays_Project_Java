@@ -54,7 +54,7 @@ public class HelloController {
 
 
     public void handleTestAllTwoNumMathClick(ActionEvent actionEvent) throws IOException {
-        handleAnySingleMethodBtnClick("0000","111","0000","0000","000");
+        driver.run(true,"0000","111","0000","0000","000");
     }
     public void onGetIfAIsDivisibleByBClick(ActionEvent actionEvent) throws IOException {
         handleAnySingleMethodBtnClick("0000","100","0000","0000","000");
