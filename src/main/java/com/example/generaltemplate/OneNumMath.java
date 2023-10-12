@@ -8,8 +8,9 @@ public class OneNumMath {
     Method 1a
 
     Precondition:
-    User inputs a string of the integer that they want the multiple of
-    and another string of how many multiples of that number they want
+    User inputs 2 strings:
+    First string is any integer
+    Second integer is a positive number
 
     returns a string that contains an array of the first input2 multiples of input1 (not including 1)
     or No multiples if the first parameter isn't greater than 0.
@@ -54,7 +55,7 @@ public class OneNumMath {
         int numInt = Integer.parseInt(num);
         if (numInt == 0) {
             return "1";
-        } else if (numInt < -1) {
+        } else if (numInt < 0) {
             return "Not possible";
         }
         int result = numInt;

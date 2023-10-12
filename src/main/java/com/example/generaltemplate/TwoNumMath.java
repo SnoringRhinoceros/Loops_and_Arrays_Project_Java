@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class TwoNumMath {
     /*
     Precondition:
-    User inputs 2 strings that could be integers or decimals
+    User inputs 2 strings that are integers
 
     returns if first string number is divisible by second string number
      */
@@ -40,9 +40,9 @@ public class TwoNumMath {
     }
 
     private String divideInDecimals(String num1, String num2) {
-        BigDecimal num1Decimal = new BigDecimal(num1);
-        BigDecimal num2Decimal = new BigDecimal(num2);
-        return num1Decimal.divide(num2Decimal, 2, RoundingMode.HALF_UP).stripTrailingZeros().toString();
+        double num1Double = Double.parseDouble(num1);
+        double num2Double = Double.parseDouble(num2);
+        return String.valueOf(num1Double/num2Double);
     }
 
     private String divideInFractions(String numerator, String denominator, String type) {
@@ -123,12 +123,21 @@ public class TwoNumMath {
             if (numInd > num2PrimeFactorsArray.size()) {
                 break;
             }
-            if (num2PrimeFactorsArray.contains(num1PrimeFactorsArray.get(numInd))) {
+            if (myOwnContainsMethod(num2PrimeFactorsArray, num1PrimeFactorsArray.get(numInd))) {
                 num2PrimeFactorsArray.remove(num1PrimeFactorsArray.get(numInd));
                 commonPrimeFactors.add(num1PrimeFactorsArray.get(numInd));
             }
         }
         return commonPrimeFactors;
+    }
+
+    private boolean myOwnContainsMethod(ArrayList<String> array1, String elementToFind) {
+        for (String element: array1) {
+            if (element.equals(elementToFind)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /*
