@@ -2,30 +2,80 @@ package com.example.generaltemplate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class HelloController {
     @FXML
-    public TextField v1TxtInput, v2TxtInput, v3TxtInput, v4TxtInput;
+    public TextField v1TxtInput1, v2TxtInput1;
+    @FXML
+    public TextField v1TxtInput11, v1TxtInput111, v1TxtInput1111;
+    @FXML
+    public TextField v1TxtInput2, v2TxtInput2, v1TxtInput21, v2TxtInput21, v3TxtInput21, v1TxtInput211, v2TxtInput211;
+    @FXML
+    public TextField v1TxtInput3, v2TxtInput3, v1TxtInput31, v2TxtInput31, v1TxtInput311, v1TxtInput3111;
+    @FXML
+    public TextField v1TxtInput4, v2TxtInput4, v3TxtInput4;
+    @FXML
+    public TextField v1TxtInput41, v2TxtInput41, v3TxtInput41;
+    @FXML
+    public TextField v1TxtInput411, v2TxtInput411, v3TxtInput411;
+    @FXML
+    public TextField v1TxtInput4111, v2TxtInput4111, v3TxtInput4111, v4TxtInput4111;
+    @FXML
+    public TextField v1TxtInput5, v2TxtInput5, v1TxtInput51, v2TxtInput51, v1TxtInput511, v2TxtInput511;
     @FXML
     private TextArea resultArea;
     private Driver driver;
+    private final HashMap<String, TextField> methodTextFields = new HashMap<>();
 
     @FXML
     public void initialize() {
         resultArea.setEditable(false);
-        driver = new Driver(resultArea);
+        driver = new Driver(resultArea, methodTextFields);
+        methodTextFields.put("v1TxtInput1", v1TxtInput1);
+        methodTextFields.put("v2TxtInput1", v2TxtInput1);
+        methodTextFields.put("v1TxtInput11", v1TxtInput11);
+        methodTextFields.put("v1TxtInput111", v1TxtInput111);
+        methodTextFields.put("v1TxtInput1111", v1TxtInput1111);
+        methodTextFields.put("v1TxtInput2", v1TxtInput2);
+        methodTextFields.put("v2TxtInput2", v2TxtInput2);
+        methodTextFields.put("v1TxtInput21", v1TxtInput21);
+        methodTextFields.put("v2TxtInput21", v2TxtInput21);
+        methodTextFields.put("v1TxtInput211", v1TxtInput211);
+        methodTextFields.put("v2TxtInput211", v2TxtInput211);
+        methodTextFields.put("v1TxtInput3", v1TxtInput3);
+        methodTextFields.put("v2TxtInput3", v2TxtInput3);
+        methodTextFields.put("v1TxtInput31", v1TxtInput31);
+        methodTextFields.put("v2TxtInput31", v2TxtInput31);
+        methodTextFields.put("v1TxtInput311", v1TxtInput311);
+        methodTextFields.put("v1TxtInput3111", v1TxtInput3111);
+        methodTextFields.put("v1TxtInput4", v1TxtInput4);
+        methodTextFields.put("v2TxtInput4", v2TxtInput4);
+        methodTextFields.put("v3TxtInput4", v3TxtInput4);
+        methodTextFields.put("v3TxtInput21", v3TxtInput21);
+        methodTextFields.put("v1TxtInput41", v1TxtInput41);
+        methodTextFields.put("v2TxtInput41", v2TxtInput41);
+        methodTextFields.put("v3TxtInput41", v3TxtInput41);
+        methodTextFields.put("v1TxtInput411", v1TxtInput411);
+        methodTextFields.put("v2TxtInput411", v2TxtInput411);
+        methodTextFields.put("v3TxtInput411", v3TxtInput411);
+        methodTextFields.put("v1TxtInput4111", v1TxtInput4111);
+        methodTextFields.put("v2TxtInput4111", v2TxtInput4111);
+        methodTextFields.put("v3TxtInput4111", v3TxtInput4111);
+        methodTextFields.put("v4TxtInput4111", v4TxtInput4111);
+        methodTextFields.put("v1TxtInput5", v1TxtInput5);
+        methodTextFields.put("v2TxtInput5", v2TxtInput5);
+        methodTextFields.put("v1TxtInput51", v1TxtInput51);
+        methodTextFields.put("v2TxtInput51", v2TxtInput51);
+        methodTextFields.put("v1TxtInput511", v1TxtInput511);
+        methodTextFields.put("v2TxtInput511", v2TxtInput511);
     }
 
     private void handleAnySingleMethodBtnClick(String oneNumMathMethods, String twoNumMathMethods, String cypherMethods, String diceSimulatorMethods, String wordArraySearchMethods) throws IOException {
-        driver.setV1(v1TxtInput.getText());
-        driver.setV2(v2TxtInput.getText());
-        driver.setV3(v3TxtInput.getText());
-        driver.setV4(v4TxtInput.getText());
         driver.run(false, oneNumMathMethods, twoNumMathMethods, cypherMethods, diceSimulatorMethods, wordArraySearchMethods);
     }
 
