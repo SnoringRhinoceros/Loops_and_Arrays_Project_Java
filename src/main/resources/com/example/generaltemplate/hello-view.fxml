@@ -52,7 +52,7 @@
       <Button layoutX="499.0" layoutY="783.0" mnemonicParsing="false" onAction="#onGetAllWordsThatContainAPhraseInAStringClick" prefHeight="55.0" prefWidth="163.0" text="getAllWordsThatContainAPhraseInAString" wrapText="true" />
       <TextField fx:id="v1TxtInput11" layoutX="11.0" layoutY="78.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
       <TextField fx:id="v1TxtInput111" layoutX="11.0" layoutY="114.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
-      <TextField fx:id="v1TxtInput1111" layoutX="11.0" layoutY="151.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
+      <TextField fx:id="v1TxtInput1111" layoutX="11.0" layoutY="151.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &lt; 20" />
       <TextField fx:id="v1TxtInput2" layoutX="11.0" layoutY="227.0" prefHeight="26.0" prefWidth="121.0" promptText="Int A" />
       <TextField fx:id="v2TxtInput2" layoutX="140.0" layoutY="227.0" prefHeight="26.0" prefWidth="121.0" promptText="Int B" />
       <TextField fx:id="v1TxtInput21" layoutX="7.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Int or double in D mode">
@@ -155,7 +155,7 @@
       <Label layoutX="660.0" layoutY="9.0" prefHeight="128.0" prefWidth="232.0" text="Note: The TestAll Btns test methods using sample input located in the src/main/java/com/example/generaltemplate/TestCases directory. These test cases were the sample test cases given so kindly by Mr. Cortez." wrapText="true" />
       <TextField fx:id="v3TxtInput21" layoutX="266.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Output Type (D,P,I)">
          <tooltip>
-            <Tooltip text="D=decimal, P=Proper fraction, I=Improper fraction outputs" />
+            <Tooltip text="D=decimal rounded to 100ths place, P=Proper fraction, I=Improper fraction outputs" />
          </tooltip></TextField>
       <Label layoutX="736.0" layoutY="129.0" text="*IMPORTANT*" />
       <Label layoutX="662.0" layoutY="141.0" prefHeight="55.0" prefWidth="232.0" text="For more information about a variable input, hover over the text field for the variable and a tooltip will appear." wrapText="true" />
