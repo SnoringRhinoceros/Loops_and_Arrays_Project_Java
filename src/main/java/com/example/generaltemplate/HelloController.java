@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -28,13 +29,14 @@ public class HelloController {
     @FXML
     public TextField v1TxtInput5, v2TxtInput5, v1TxtInput51, v2TxtInput51, v1TxtInput511, v2TxtInput511;
     @FXML
-    private TextArea resultArea;
+    private TextArea resultArea, getAllWordsThatContainAPhraseInAStringResultArea;
     private Driver driver;
     private final HashMap<String, TextField> methodTextFields = new HashMap<>();
 
     @FXML
     public void initialize() {
         resultArea.setEditable(false);
+        getAllWordsThatContainAPhraseInAStringResultArea.setEditable(false);
         driver = new Driver(resultArea, methodTextFields);
         methodTextFields.put("v1TxtInput1", v1TxtInput1);
         methodTextFields.put("v2TxtInput1", v2TxtInput1);
@@ -162,5 +164,15 @@ public class HelloController {
     }
     public void onGetAllWordsThatContainAPhraseInAStringClick(ActionEvent actionEvent) throws IOException {
         handleAnySingleMethodBtnClick("0000","000","0000","0000","001");
+    }
+
+    public void handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged(KeyEvent inputMethodEvent) {
+        WordArraySearch wordArraySearch = new WordArraySearch();
+        if (v1TxtInput511.getText() != null && !v1TxtInput511.getText().equals("") && !v2TxtInput511.getText().equals("") && v2TxtInput511.getText() != null) {
+            String methodResult = wordArraySearch.getAllWordsThatContainAPhraseInAString(v1TxtInput511.getText(), v2TxtInput511.getText());
+            getAllWordsThatContainAPhraseInAStringResultArea.setText(methodResult);
+        } else {
+            getAllWordsThatContainAPhraseInAStringResultArea.setText("");
+        }
     }
 }

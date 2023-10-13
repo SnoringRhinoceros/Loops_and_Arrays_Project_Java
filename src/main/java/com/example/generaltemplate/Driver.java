@@ -185,7 +185,7 @@ public class Driver {
     }
 
     private void showInputAndOutput(String result) {
-        resultTextArea.appendText("\nInput:\n");
+        resultTextArea.appendText("\n\nInput:\n");
         if (v1 != null && !v1.equals("")) {
             resultTextArea.appendText(v1);
         }

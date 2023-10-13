@@ -53,6 +53,12 @@ public class WordArraySearch {
         return sum;
     }
 
+    /*
+    Precondition:
+    User inputs 2 strings:
+    First string is any legal string
+    Second string is any legal string with no spaces
+     */
     public String getAllWordsThatContainAPhraseInAString(String text, String phraseToFind) {
         ArrayList<String> wordsArray = new ArrayList<>(List.of(text.split(" ")));
         ArrayList<String> result = new ArrayList<>();

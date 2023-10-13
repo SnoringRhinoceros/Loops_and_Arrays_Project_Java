@@ -6,14 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.generaltemplate.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.generaltemplate.HelloController">
    <children>
       <Button layoutX="326.0" layoutY="850.0" mnemonicParsing="false" onAction="#onTestEverythingBtnClick" text="Test Everything" />
       <TextField fx:id="v1TxtInput1" layoutX="11.0" layoutY="39.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
       <TextArea fx:id="resultArea" layoutX="662.0" layoutY="142.0" prefHeight="561.0" prefWidth="225.0" />
       <TextField fx:id="v2TxtInput1" layoutX="144.0" layoutY="39.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v3TxtInput4" layoutX="276.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 3" />
-      <TextField fx:id="v4TxtInput4111" layoutX="404.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 4" />
+      <TextField fx:id="v3TxtInput4" layoutX="276.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v4TxtInput4111" layoutX="404.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="0 &lt; Int &lt;= Var2" />
       <Button layoutX="307.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleTestAllOneNumMathClick" prefWidth="133.0" text="Test all OneNumMath" />
       <Button layoutX="528.0" layoutY="45.0" mnemonicParsing="false" onAction="#onMultiplesOfNumClick" text="multiplesOfNum" />
       <Button layoutX="527.0" layoutY="79.0" mnemonicParsing="false" onAction="#onNumIsEvenOrOddClick" text="numIsEvenOrOdd" />
@@ -48,29 +48,29 @@
       <TextField fx:id="v2TxtInput211" layoutX="140.0" layoutY="292.0" prefHeight="26.0" prefWidth="121.0" promptText="Positive int" />
       <TextField fx:id="v1TxtInput3" layoutX="13.0" layoutY="349.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
       <TextField fx:id="v2TxtInput3" layoutX="142.0" layoutY="349.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
-      <TextField fx:id="v1TxtInput31" layoutX="13.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput31" layoutX="146.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v1TxtInput311" layoutX="13.0" layoutY="424.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v1TxtInput3111" layoutX="13.0" layoutY="461.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v1TxtInput4" layoutX="11.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput4" layoutX="144.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v1TxtInput41" layoutX="11.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput41" layoutX="144.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v1TxtInput411" layoutX="15.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput411" layoutX="148.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v1TxtInput4111" layoutX="15.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput4111" layoutX="148.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v3TxtInput41" layoutX="276.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 3" />
-      <TextField fx:id="v3TxtInput411" layoutX="276.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 3" />
-      <TextField fx:id="v3TxtInput4111" layoutX="276.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 3" />
-      <TextField fx:id="v1TxtInput5" layoutX="13.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput5" layoutX="146.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v1TxtInput51" layoutX="15.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput51" layoutX="148.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextField fx:id="v1TxtInput511" layoutX="19.0" layoutY="798.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 1" />
-      <TextField fx:id="v2TxtInput511" layoutX="152.0" layoutY="798.0" prefHeight="26.0" prefWidth="121.0" promptText="Variable 2" />
-      <TextArea layoutX="676.0" layoutY="763.0" prefHeight="128.0" prefWidth="209.0" promptText="Output from getAllWordsThatContainAPhraseInAStringMethod" />
-      <Label layoutX="660.0" layoutY="9.0" prefHeight="128.0" prefWidth="232.0" text="Note: Test all Btns test methods using sample input and compares sample outputs located in the src/main/java/com/example/generaltemplate/TestCases directory. These test cases were the sample test cases given so kindly by Mr. Cortez." wrapText="true" />
+      <TextField fx:id="v1TxtInput31" layoutX="13.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
+      <TextField fx:id="v2TxtInput31" layoutX="146.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0 (optional)" />
+      <TextField fx:id="v1TxtInput311" layoutX="13.0" layoutY="424.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
+      <TextField fx:id="v1TxtInput3111" layoutX="13.0" layoutY="461.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
+      <TextField fx:id="v1TxtInput4" layoutX="11.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v2TxtInput4" layoutX="144.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v1TxtInput41" layoutX="11.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v2TxtInput41" layoutX="144.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v1TxtInput411" layoutX="15.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v2TxtInput411" layoutX="148.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v1TxtInput4111" layoutX="15.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v2TxtInput4111" layoutX="148.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v3TxtInput41" layoutX="276.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v3TxtInput411" layoutX="276.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
+      <TextField fx:id="v3TxtInput4111" layoutX="276.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="1-100 inclusive (%)" />
+      <TextField fx:id="v1TxtInput5" layoutX="13.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
+      <TextField fx:id="v2TxtInput5" layoutX="146.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
+      <TextField fx:id="v1TxtInput51" layoutX="15.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
+      <TextField fx:id="v2TxtInput51" layoutX="148.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
+      <TextField fx:id="v1TxtInput511" layoutX="19.0" layoutY="798.0" onKeyReleased="#handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged" prefHeight="26.0" prefWidth="121.0" promptText="String" />
+      <TextField fx:id="v2TxtInput511" layoutX="152.0" layoutY="798.0" onKeyReleased="#handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
+      <TextArea fx:id="getAllWordsThatContainAPhraseInAStringResultArea" layoutX="676.0" layoutY="763.0" prefHeight="128.0" prefWidth="209.0" promptText="Output box for getAllWordsThatContainAPhraseInAStringMethod" />
+      <Label layoutX="660.0" layoutY="9.0" prefHeight="128.0" prefWidth="232.0" text="Note: The TestAll Btns test methods using sample input located in the src/main/java/com/example/generaltemplate/TestCases directory. These test cases were the sample test cases given so kindly by Mr. Cortez." wrapText="true" />
       <TextField fx:id="v3TxtInput21" layoutX="266.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Output Type (D,P,I)" />
    </children>
 </AnchorPane>

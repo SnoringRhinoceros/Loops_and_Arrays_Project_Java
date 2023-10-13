@@ -61,7 +61,7 @@ public class Cypher {
     returns all possible unique outputs given input1 and without knowing input2
      */
     public String decodeCaesarCypher(String textToDecode, String howFarToDecode) {
-        if (howFarToDecode == null) {
+        if (howFarToDecode == null || howFarToDecode.equals("")) {
             return decodeCaesarCypher(textToDecode);
         }
         return encodeCypher(textToDecode, String.valueOf(Integer.parseInt(howFarToDecode)*-1), "C");
