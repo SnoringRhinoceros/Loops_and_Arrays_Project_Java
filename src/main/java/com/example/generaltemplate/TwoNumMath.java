@@ -32,11 +32,12 @@ public class TwoNumMath {
         if (num2.equals("0")) {
             return "Not possible";
         }
-        return switch (outputType) {
-            case "D" -> divideInDecimals(num1, num2);
-            case "P", "I" -> divideInFractions(num1, num2, outputType);
-            default -> "invalid 3rd parameter";
-        };
+        if (outputType.equals("D")) {
+            return divideInDecimals(num1, num2);
+        } else if (outputType.equals("P") || outputType.equals("I")) {
+            return divideInFractions(num1, num2, outputType);
+        }
+        return "Invalid output type";
     }
 
     private String divideInDecimals(String num1, String num2) {
@@ -47,9 +48,20 @@ public class TwoNumMath {
 
     private String round(double num, int nearestPlace) {
         String result = String.valueOf(Math.round(num*Math.pow(10, nearestPlace))/(Math.pow(10, nearestPlace)));
-        return result.contains(".0") ? String.valueOf((int)Double.parseDouble(result)) : result;
+        if (myOwnContainsMethod(result, ".0")) {
+            return String.valueOf((int)Double.parseDouble(result));
+        }
+        return result;
     }
-
+    
+    private boolean myOwnContainsMethod (String text, String elementToFind) {
+        for (int i = 0; i+elementToFind.length()-1 < text.length(); i++) {
+            if (text.substring(i, i+elementToFind.length()).equals(elementToFind)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private String divideInFractions(String numerator, String denominator, String type) {
         OneNumMath oneNumMath = new OneNumMath();
@@ -154,6 +166,10 @@ public class TwoNumMath {
     returns the greatest common factor of the two inputs or none if there is none
      */
     public String getGCF(String num1, String num2) {
-        return String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2))).equals("1") ? "none" : String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2)));
+        if (String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2))).equals("1")) {
+            return "none";
+        } else {
+            return String.valueOf(multiplyAllNumsInAList(getCommonPrimeFactors(num1, num2)));
+        }
     }
 }

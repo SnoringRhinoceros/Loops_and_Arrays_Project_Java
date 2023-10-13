@@ -10,8 +10,7 @@ public class Cypher {
         ArrayList<String> lowercaseAlphabet = new ArrayList<>(List.of("abcdefghijklmnopqrstuvwxyz".split("")));
         StringBuilder result = new StringBuilder();
         for (String character : textToEncodeArray) {
-            // make char at different
-            // All I'm checking is if the letter is a valid alphabet letter
+            // This if statement checks if the letter is an english character
             if (((int) 'A' <= (int) character.charAt(0) && (int) character.charAt(0) <= (int) 'Z') || (int) 'a' <= (int) character.charAt(0) && (int) character.charAt(0) <= (int) 'z') {
                 int translatedCharacter = 0;
                 if (type.equals("C")) {

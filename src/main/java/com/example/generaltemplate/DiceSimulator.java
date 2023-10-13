@@ -1,7 +1,5 @@
 package com.example.generaltemplate;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -56,8 +54,8 @@ public class DiceSimulator {
             }
             sum += rollInt;
         }
-        BigDecimal avg = new BigDecimal(sum);
-        avg = avg.divide(BigDecimal.valueOf(allRolls.size()), 2, RoundingMode.HALF_UP).stripTrailingZeros();
+        TwoNumMath twoNumMath = new TwoNumMath();
+        String avg = twoNumMath.divide(String.valueOf(sum), String.valueOf(allRolls.size()), "D");
         return "Min=" + min + ", Max=" + max + ", Avg=" + avg;
     }
 
@@ -87,7 +85,7 @@ public class DiceSimulator {
         ArrayList<String> allRolls = turnStringIntoArray(roll(faces, numDice, rolls));
         ArrayList<Integer> result = new ArrayList<>();
         String minAndMax = minMaxAndAvg(faces, numDice, rolls);
-        int min = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Min=")+3+1, minAndMax.indexOf(", Max")));;
+        int min = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Min=")+3+1, minAndMax.indexOf(", Max")));
         int max = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Max=")+3+1, minAndMax.indexOf(", Avg")));
         for (int currentNum = min; currentNum <= max; currentNum++) {
             int timesSame = 0;
@@ -104,7 +102,7 @@ public class DiceSimulator {
     private String howManyOfEachSum(String faces, String numDice, String rolls, ArrayList<String> allRolls) {
         ArrayList<Integer> result = new ArrayList<>();
         String minAndMax = minMaxAndAvg(faces, numDice, rolls);
-        int min = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Min=")+3+1, minAndMax.indexOf(", Max")));;
+        int min = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Min=")+3+1, minAndMax.indexOf(", Max")));
         int max = Integer.parseInt(minAndMax.substring(minAndMax.indexOf("Max=")+3+1, minAndMax.indexOf(", Avg")));
         for (int currentNum = min; currentNum <= max; currentNum++) {
             int timesSame = 0;
