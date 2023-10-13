@@ -4,16 +4,29 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.generaltemplate.HelloController">
    <children>
       <Button layoutX="326.0" layoutY="850.0" mnemonicParsing="false" onAction="#onTestEverythingBtnClick" text="Test Everything" />
-      <TextField fx:id="v1TxtInput1" layoutX="11.0" layoutY="39.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
-      <TextArea fx:id="resultArea" layoutX="662.0" layoutY="142.0" prefHeight="561.0" prefWidth="225.0" />
-      <TextField fx:id="v2TxtInput1" layoutX="144.0" layoutY="39.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v3TxtInput4" layoutX="276.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v4TxtInput4111" layoutX="404.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="0 &lt; Int &lt;= Var2" />
+      <TextField fx:id="v1TxtInput1" layoutX="11.0" layoutY="39.0" prefHeight="26.0" prefWidth="121.0" promptText="Int">
+         <tooltip>
+            <Tooltip text="Number to find multiples of " />
+         </tooltip></TextField>
+      <TextArea fx:id="resultArea" editable="false" layoutX="662.0" layoutY="200.0" prefHeight="503.0" prefWidth="225.0" />
+      <TextField fx:id="v2TxtInput1" layoutX="144.0" layoutY="39.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="How many multiples wanted" />
+         </tooltip></TextField>
+      <TextField fx:id="v3TxtInput4" layoutX="276.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="How many times to roll" />
+         </tooltip></TextField>
+      <TextField fx:id="v4TxtInput4111" layoutX="404.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="0 &lt; Int &lt;= Var2">
+         <tooltip>
+            <Tooltip text="The number of the face that is weighted" />
+         </tooltip></TextField>
       <Button layoutX="307.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleTestAllOneNumMathClick" prefWidth="133.0" text="Test all OneNumMath" />
       <Button layoutX="528.0" layoutY="45.0" mnemonicParsing="false" onAction="#onMultiplesOfNumClick" text="multiplesOfNum" />
       <Button layoutX="527.0" layoutY="79.0" mnemonicParsing="false" onAction="#onNumIsEvenOrOddClick" text="numIsEvenOrOdd" />
@@ -40,37 +53,111 @@
       <TextField fx:id="v1TxtInput11" layoutX="11.0" layoutY="78.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
       <TextField fx:id="v1TxtInput111" layoutX="11.0" layoutY="114.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
       <TextField fx:id="v1TxtInput1111" layoutX="11.0" layoutY="151.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
-      <TextField fx:id="v1TxtInput2" layoutX="11.0" layoutY="227.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
-      <TextField fx:id="v2TxtInput2" layoutX="140.0" layoutY="227.0" prefHeight="26.0" prefWidth="121.0" promptText="Int" />
-      <TextField fx:id="v1TxtInput21" layoutX="7.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Int or double in D mode" />
-      <TextField fx:id="v2TxtInput21" layoutX="136.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Int or double in D mode" />
+      <TextField fx:id="v1TxtInput2" layoutX="11.0" layoutY="227.0" prefHeight="26.0" prefWidth="121.0" promptText="Int A" />
+      <TextField fx:id="v2TxtInput2" layoutX="140.0" layoutY="227.0" prefHeight="26.0" prefWidth="121.0" promptText="Int B" />
+      <TextField fx:id="v1TxtInput21" layoutX="7.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Int or double in D mode">
+         <tooltip>
+            <Tooltip text="Numerator for division (can be decimal if the output type is D)" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput21" layoutX="136.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Int or double in D mode">
+         <tooltip>
+            <Tooltip text="Denominator for division (can be double if output type is D)" />
+         </tooltip></TextField>
       <TextField fx:id="v1TxtInput211" layoutX="11.0" layoutY="292.0" prefHeight="26.0" prefWidth="121.0" promptText="Positive int" />
       <TextField fx:id="v2TxtInput211" layoutX="140.0" layoutY="292.0" prefHeight="26.0" prefWidth="121.0" promptText="Positive int" />
-      <TextField fx:id="v1TxtInput3" layoutX="13.0" layoutY="349.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
-      <TextField fx:id="v2TxtInput3" layoutX="142.0" layoutY="349.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
-      <TextField fx:id="v1TxtInput31" layoutX="13.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
-      <TextField fx:id="v2TxtInput31" layoutX="146.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0 (optional)" />
+      <TextField fx:id="v1TxtInput3" layoutX="13.0" layoutY="349.0" prefHeight="26.0" prefWidth="121.0" promptText="String">
+         <tooltip>
+            <Tooltip text="String to encode" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput3" layoutX="142.0" layoutY="349.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="How far to encode" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput31" layoutX="13.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="String">
+         <tooltip>
+            <Tooltip text="String to decode" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput31" layoutX="146.0" layoutY="386.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0 (optional)">
+         <tooltip>
+            <Tooltip text="How far to encode (if not specified, returns all possibilities)" />
+         </tooltip></TextField>
       <TextField fx:id="v1TxtInput311" layoutX="13.0" layoutY="424.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
       <TextField fx:id="v1TxtInput3111" layoutX="13.0" layoutY="461.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
-      <TextField fx:id="v1TxtInput4" layoutX="11.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v2TxtInput4" layoutX="144.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v1TxtInput41" layoutX="11.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v2TxtInput41" layoutX="144.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v1TxtInput411" layoutX="15.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v2TxtInput411" layoutX="148.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v1TxtInput4111" layoutX="15.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v2TxtInput4111" layoutX="148.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v3TxtInput41" layoutX="276.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v3TxtInput411" layoutX="276.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0" />
-      <TextField fx:id="v3TxtInput4111" layoutX="276.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="1-100 inclusive (%)" />
-      <TextField fx:id="v1TxtInput5" layoutX="13.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
-      <TextField fx:id="v2TxtInput5" layoutX="146.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
-      <TextField fx:id="v1TxtInput51" layoutX="15.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="String" />
-      <TextField fx:id="v2TxtInput51" layoutX="148.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
-      <TextField fx:id="v1TxtInput511" layoutX="19.0" layoutY="798.0" onKeyReleased="#handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged" prefHeight="26.0" prefWidth="121.0" promptText="String" />
-      <TextField fx:id="v2TxtInput511" layoutX="152.0" layoutY="798.0" onKeyReleased="#handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces" />
-      <TextArea fx:id="getAllWordsThatContainAPhraseInAStringResultArea" layoutX="676.0" layoutY="763.0" prefHeight="128.0" prefWidth="209.0" promptText="Output box for getAllWordsThatContainAPhraseInAStringMethod" />
+      <TextField fx:id="v1TxtInput4" layoutX="11.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of faces on die" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput4" layoutX="144.0" layoutY="551.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of dice" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput41" layoutX="11.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of faces on die" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput41" layoutX="144.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of dice" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput411" layoutX="15.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of faces on die" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput411" layoutX="148.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of dice" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput4111" layoutX="15.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of faces on die" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput4111" layoutX="148.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="Number of dice" />
+         </tooltip></TextField>
+      <TextField fx:id="v3TxtInput41" layoutX="276.0" layoutY="584.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="How many times to roll" />
+         </tooltip></TextField>
+      <TextField fx:id="v3TxtInput411" layoutX="276.0" layoutY="621.0" prefHeight="26.0" prefWidth="121.0" promptText="Int &gt; 0">
+         <tooltip>
+            <Tooltip text="How many times to roll" />
+         </tooltip></TextField>
+      <TextField fx:id="v3TxtInput4111" layoutX="276.0" layoutY="657.0" prefHeight="26.0" prefWidth="121.0" promptText="1-100 inclusive (%)">
+         <tooltip>
+            <Tooltip text="Percentage chance the weighted side will be rolled (no % sign)" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput5" layoutX="13.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="String">
+         <tooltip>
+            <Tooltip text="String to find word in" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput5" layoutX="146.0" layoutY="717.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces">
+         <tooltip>
+            <Tooltip text="Word to find in string (no spaces)" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput51" layoutX="15.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="String">
+         <tooltip>
+            <Tooltip text="String to find index of word in" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput51" layoutX="148.0" layoutY="750.0" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces">
+         <tooltip>
+            <Tooltip text="Word to find index of in string (no spaces)" />
+         </tooltip></TextField>
+      <TextField fx:id="v1TxtInput511" layoutX="19.0" layoutY="798.0" onKeyReleased="#handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged" prefHeight="26.0" prefWidth="121.0" promptText="String">
+         <tooltip>
+            <Tooltip text="String to find all words that contain a certain phrase in" />
+         </tooltip></TextField>
+      <TextField fx:id="v2TxtInput511" layoutX="152.0" layoutY="798.0" onKeyReleased="#handleOnGetAllWordsThatContainAPhraseInAStringTextFieldChanged" prefHeight="26.0" prefWidth="121.0" promptText="String no spaces">
+         <tooltip>
+            <Tooltip text="Phrase to find all words of in a string" />
+         </tooltip></TextField>
+      <TextArea fx:id="getAllWordsThatContainAPhraseInAStringResultArea" editable="false" layoutX="676.0" layoutY="763.0" prefHeight="128.0" prefWidth="209.0" promptText="Output box for getAllWordsThatContainAPhraseInAStringMethod" />
       <Label layoutX="660.0" layoutY="9.0" prefHeight="128.0" prefWidth="232.0" text="Note: The TestAll Btns test methods using sample input located in the src/main/java/com/example/generaltemplate/TestCases directory. These test cases were the sample test cases given so kindly by Mr. Cortez." wrapText="true" />
-      <TextField fx:id="v3TxtInput21" layoutX="266.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Output Type (D,P,I)" />
+      <TextField fx:id="v3TxtInput21" layoutX="266.0" layoutY="258.0" prefHeight="26.0" prefWidth="121.0" promptText="Output Type (D,P,I)">
+         <tooltip>
+            <Tooltip text="D=decimal, P=Proper fraction, I=Improper fraction outputs" />
+         </tooltip></TextField>
+      <Label layoutX="736.0" layoutY="129.0" text="*IMPORTANT*" />
+      <Label layoutX="662.0" layoutY="141.0" prefHeight="55.0" prefWidth="232.0" text="For more information about a variable input, hover over the text field for the variable and a tooltip will appear." wrapText="true" />
    </children>
 </AnchorPane>

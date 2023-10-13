@@ -42,8 +42,14 @@ public class TwoNumMath {
     private String divideInDecimals(String num1, String num2) {
         double num1Double = Double.parseDouble(num1);
         double num2Double = Double.parseDouble(num2);
-        return String.valueOf(num1Double/num2Double);
+        return round(num1Double/num2Double, 2);
     }
+
+    private String round(double num, int nearestPlace) {
+        String result = String.valueOf(Math.round(num*Math.pow(10, nearestPlace))/(Math.pow(10, nearestPlace)));
+        return result.contains(".0") ? String.valueOf((int)Double.parseDouble(result)) : result;
+    }
+
 
     private String divideInFractions(String numerator, String denominator, String type) {
         OneNumMath oneNumMath = new OneNumMath();

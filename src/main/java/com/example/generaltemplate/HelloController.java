@@ -35,8 +35,6 @@ public class HelloController {
 
     @FXML
     public void initialize() {
-        resultArea.setEditable(false);
-        getAllWordsThatContainAPhraseInAStringResultArea.setEditable(false);
         driver = new Driver(resultArea, methodTextFields);
         methodTextFields.put("v1TxtInput1", v1TxtInput1);
         methodTextFields.put("v2TxtInput1", v2TxtInput1);
